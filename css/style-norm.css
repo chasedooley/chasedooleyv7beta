@@ -1,0 +1,187 @@
+/* THIS WORKS!
+
+a[target] {
+  color: red;
+}
+
+SO I COULD USE THAT TO ESTABLISH A DIFFERENCE
+BETWEEN EXTERNAL AND INTERNAL LINKS.
+
+Thoughts: Since I use Small Caps for italic emphasis, 
+I should use the blue-links as internal links. And I should
+style external links to be less obnoxious.
+
+*/
+
+@import "epilogue.css";
+
+:root {
+  --bg-color: white;
+  --color: #222;
+  --accent: blue;
+}
+
+html {
+  font-size: 112.5%;
+}
+
+body {
+  font-family: "Epilogue", Helvetica, "DejaVu Sans", sans-serif;
+  line-height: 1.4;
+  max-width: 620px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  background-color: var(--bg-color);
+  color: var(--color);
+}
+
+header {
+  margin: 2.25rem 0;
+}
+
+.sr-only {
+  display: none;
+}
+
+img {
+  width: 100%;
+}
+
+hr {
+  margin: 2.25rem 0;
+  border: 2px solid var(--color);
+}
+
+h1 {
+  font-size: 120%;
+  margin: 0;
+}
+
+h2 {
+  font-size: inherit;
+  margin: 2.25rem 0 1.125rem 0;
+}
+
+h3 {
+  font-size: 100%;
+  font-variant: small-caps;
+  font-kerning: auto;
+  letter-spacing: 0.05rem;
+  text-transform: lowercase;
+  margin: 1.125rem 0 0.56rem 0;
+}
+
+h1 + h2 {
+  font-weight: normal;
+  margin: 0;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+a:hover {
+  color: #7f7fff;
+}
+
+a[target] {
+  color: inherit;
+}
+
+a[target]:after {
+  position: relative;
+  content: "\FEFF↗"; /* → ↗*/
+  /* margin-left: 0.1rem; */
+  top: 0.1rem;
+  font-size: 120%;
+}
+
+a[target]:hover {
+  color: blue;
+}
+
+.no-style {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex a {
+  display: block;
+}
+
+figure {
+  width: 100%;
+  margin: 0 0 1.125rem 0;
+}
+
+small,
+figcaption {
+  font-size: 90%;
+}
+
+blockquote {
+  font-size: 90%;
+  margin: auto 0;
+  padding-left: 2.25rem;
+  margin-bottom: 1.125rem;
+  line-height: 1.3;
+}
+
+cite {
+  font-style: normal;
+}
+
+footer {
+  margin-top: 3rem;
+}
+
+#feed {
+  margin: 3rem 0;
+}
+
+summary {
+  cursor: pointer;
+}
+
+summary:hover,
+summary:focus {
+  color: var(--accent);
+}
+
+p {
+  hyphens: auto;
+  margin: 0 0 1.125rem 0;
+}
+
+.quote-align {
+  text-indent: -0.4rem; /* or .45?*/
+}
+
+ol,
+ul {
+  padding: 0;
+}
+
+em {
+  font-style: normal;
+  font-variant: small-caps;
+  font-kerning: auto;
+  letter-spacing: 0.05rem;
+  text-transform: lowercase;
+}
+
+@media screen and (max-width: 900px) {
+  .flex {
+    display: block;
+  }
+}
